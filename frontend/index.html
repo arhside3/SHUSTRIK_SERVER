@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<title>База данных карт</title>
+<link rel="stylesheet" href="static/index.css">
+</head>
+<body>
+<h1>База данных карт с изображениями</h1>
+
+<div class="current-card-display" id="currentCardDisplay" style="display: none;">
+  <h3>Текущая карта</h3>
+  <div class="current-card-info">
+    <div id="currentCardImage" class="current-card-image"></div>
+    <div class="current-card-details">
+      <div><strong>Тип:</strong> <span id="currentCardType">-</span></div>
+      <div><strong>UID:</strong> <span id="currentCardUid">-</span></div>
+      <div><strong>Доступ:</strong> <span id="currentCardAccess">-</span></div>
+      <div><strong>Время:</strong> <span id="currentCardTime">-</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="upload-section">
+  <h3>Загрузить изображение для карты</h3>
+  <form id="uploadForm">
+    <div>
+      <label>Тип карты: <input type="text" id="uploadCardType" required></label>
+      <label>UID: <input type="text" id="uploadUid" placeholder="09250C05" required></label>
+    </div>
+    <div>
+      <label>Изображение: <input type="file" id="imageFile" accept="image/*" required></label>
+    </div>
+    <button type="submit">Загрузить изображение</button>
+  </form>
+  <div id="uploadStatus"></div>
+</div>
+
+<button onclick="fetchCards()">Обновить список</button>
+<table id="cardsTable">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Тип карты</th>
+      <th>UID</th>
+      <th>Дата добавления</th>
+      <th>Изображение</th>
+      <th>Действия</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+<div class="port-monitor">
+  <h3>Монитор COM-порта</h3>
+  <div class="monitor-controls">
+    <button id="startMonitor">Запустить монитор</button>
+    <button id="stopMonitor" disabled>Остановить монитор</button>
+    <button id="clearMonitor">Очистить</button>
+    <span id="monitorStatus" class="status-disconnected">Отключен</span>
+  </div>
+  <div class="monitor-display" id="monitorDisplay">
+    <div class="monitor-messages" id="monitorMessages"></div>
+  </div>
+</div>
+
+<script src="src/index.js"></script>
+</body>
+</html>

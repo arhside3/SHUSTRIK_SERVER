@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<title>Просмотр карты</title>
+<link rel="stylesheet" href="static/card-viewer.css">
+</head>
+<body>
+<div class="card-container">
+  <h1>Детали карты</h1>
+  
+  <div id="imageContainer">
+    
+  </div>
+  
+  <div class="card-info">
+    <div class="info-row">
+      <div class="info-label">Тип карты:</div>
+      <div class="info-value" id="infoCardType">-</div>
+    </div>
+    <div class="info-row">
+      <div class="info-label">UID:</div>
+      <div class="info-value" id="infoUid">-</div>
+    </div>
+    <div class="info-row">
+      <div class="info-label">Дата добавления:</div>
+      <div class="info-value" id="infoDateAdded">-</div>
+    </div>
+    <div class="info-row">
+      <div class="info-label">Дата загрузки фото:</div>
+      <div class="info-value" id="infoDateUploaded">-</div>
+    </div>
+  </div>
+  
+  <button onclick="goBack()">Назад к списку</button>
+</div>
+
+<script src="src/card-viewer.js"></script>
+</body>
+</html>
